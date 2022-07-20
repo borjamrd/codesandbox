@@ -11,14 +11,11 @@ let state: StateType = 'editing'
 let errorMessage: ErrorMessageType = ''
 
 function transpileCode(code: string): TranspiledCodeType {
-  // ignore imports so Babel doesn't transpile it
   const codeToTranspile = replace(code, importsRegex)
-  // the magic sauce used to transpile the code
   const options = { presets: ['es2015-loose', 'react'] }
   const { code: transpiledCode } = transform(codeToTranspile, options)
 
   if (!transpiledCode) {
-    // syntax errors get caught by the `error` listener
     throw new Error(`Something went wrong transpiling ${codeToTranspile}.`)
   }
 
@@ -26,10 +23,7 @@ function transpileCode(code: string): TranspiledCodeType {
   const imports = code.match(importsRegex)?.join('\n') ?? ''
 
   return {
-    // this is passed to `updateIframe`
     iframeCode: hasImports ? `${imports}\n${transpiledCode}` : transpiledCode,
-    // this is passed to `updateSource`
-    // ignore /*#__PURE__*/ from transpiled output to reduce noise
     sourceCode: replace(transpiledCode, pureRegex),
   }
 }
@@ -90,8 +84,6 @@ window.addEventListener('error', ({ error }: ErrorEvent) => {
   state = 'error'
   errorMessage = error.message
   updateUI()
-
-  // if there is no longer an `error` on the page
   state = 'editing'
 })
 
