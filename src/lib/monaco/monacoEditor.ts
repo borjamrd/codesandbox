@@ -13,12 +13,15 @@ function App() {
   useEffect(() => confetti(), [])
   return (
     <div className="app">
+    <img height='200px' src="/homergif.gif" />
       <h1>JavaScript Sandbox</h1>
       <p>
         You can use NPM packages provided by {''}
         <a href="https://www.skypack.dev/">Skypack</a>.
       </p>
-      <img src="/image.gif" />
+    
+      <span>Checkout more projects <a href="https://github.com/borjamrd" target="_blank">here.</a> Check out the full article by <a href="https://joyofcode.xyz/" target="_blank">Joyofcode</a></span>
+      
     </div>
   )
 }
@@ -28,16 +31,16 @@ render(
 )`.trim()
 
 const editorOptions = {
-  value: editorCode,
-  language: 'javascript',
-  theme: 'vs-dark',
-  automaticLayout: true,
-  minimap: {
-    enabled: false,
-  },
-  fontFamily: 'IBM Plex Mono, monospace',
-  fontSize: 16,
-  tabSize: 2,
+    value: editorCode,
+    language: 'javascript',
+    theme: 'vs-dark',
+    automaticLayout: true,
+    minimap: {
+        enabled: false,
+    },
+    fontFamily: 'IBM Plex Mono, monospace',
+    fontSize: 16,
+    tabSize: 2,
 }
 
 const monacoEditor = monaco.editor.create(elements.editor, editorOptions)
