@@ -1,4 +1,4 @@
-# FIrst codesandbox
+# First codesandbox
 Hi, this is my firt code sandbox made with JS Vanilla. If you like I'll recommend you read the full original project by Joyofcode.
 
 ```
