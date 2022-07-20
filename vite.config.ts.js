@@ -1,0 +1,14 @@
+// vite.config.ts
+import { defineConfig } from "vite";
+import monacoEditorPlugin from "vite-plugin-monaco-editor";
+var vite_config_default = defineConfig({
+  plugins: [
+    monacoEditorPlugin({
+      languageWorkers: ["editorWorkerService", "typescript"]
+    })
+  ]
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gJ3ZpdGUnXHJcbmltcG9ydCBtb25hY29FZGl0b3JQbHVnaW4gZnJvbSAndml0ZS1wbHVnaW4tbW9uYWNvLWVkaXRvcidcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XHJcbiAgcGx1Z2luczogW1xyXG4gICAgbW9uYWNvRWRpdG9yUGx1Z2luKHtcclxuICAgICAgbGFuZ3VhZ2VXb3JrZXJzOiBbJ2VkaXRvcldvcmtlclNlcnZpY2UnLCAndHlwZXNjcmlwdCddLFxyXG4gICAgfSksXHJcbiAgXSxcclxufSkiXSwKICAibWFwcGluZ3MiOiAiO0FBQUE7QUFDQTtBQUVBLElBQU8sc0JBQVEsYUFBYTtBQUFBLEVBQzFCLFNBQVM7QUFBQSxJQUNQLG1CQUFtQjtBQUFBLE1BQ2pCLGlCQUFpQixDQUFDLHVCQUF1QjtBQUFBO0FBQUE7QUFBQTsiLAogICJuYW1lcyI6IFtdCn0K
